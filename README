@@ -1,0 +1,23 @@
+SharpSource
+
+
+Description:
+SharpSource is a SourceMod extension which enables the developer to create native pawn functions with C# and access SourceMod functionality from within C#.
+
+
+Dependencies:
+In order to run SharpSource you need to have Mono installed on your machine aswell as the developer files for mono.
+A small all-in-one version will be shipped aswell later.
+If you are using linux just use a package management tool like apt to install all the dependencies (gmcs-dev, mono-dev, mono).
+
+
+How to install:
+go to the sourcemodplugin directory and write: make
+1. Compile the sourcemodplugin for your engine and place it the extensions subdir of sourcemod: <game>/addons/sourcemod/extensions/
+1. a) Compiling on Linux.
+      Just enter the command in the sourcemodplugin directory: make ENGINE=orangebox
+      If it doesn't work, set the Makefile directory definitions properly.
+      The binary will show up in Release.orangebox, it will be called sharpsource.ext.so, place it in sourcemod/extensions/
+2. Create an empty file called sharpsource.autoload in the extensions directory.
+3. Compile the C# code in the SharpSource/ directory, use MonoDevelop or the xbuild command and place the compiled SharpSource.dll in srcds/orangebox/ where srcds is the path to your source dedicated server.
+4. Run the server, for now it will just print "C#: Hello World".
