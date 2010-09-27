@@ -62,10 +62,27 @@ bool SharpSource::SDK_OnLoad(char *error, size_t maxlength, bool late)
   }
 
   MonoImage *image = mono_assembly_get_image(assembly);
+  if (!image)
+  {
+    strcpy(error, "Can't load the assembly image");
+    return false;
+  }
 
   MonoClass *metamod_class = mono_class_from_name(image, "SharpSource", "MainClass");
 
-  MonoMethod *init = MonoSearchMethod(metamod_class, "Init");
+  if (!metamod_class)
+  {
+    strcpy(error, "Can't find the class SharpSource::MainClass in the provided assembly");
+    return false;
+  }
+
+  MonoMethod *init = mono_class_get_method_from_name(metamod_class, "Init", 1);
+
+  if (!init)
+  {
+    strcpy(error, "Can't find the method Init in MainClass");
+    return false;
+  }
 
   void *args[1];
   args[0] = g_pSM;
@@ -74,7 +91,10 @@ bool SharpSource::SDK_OnLoad(char *error, size_t maxlength, bool late)
   return true;
 }
 
-void SharpSource::SDK_OnUnload() { }
+void SharpSource::SDK_OnUnload()
+{
+  mono_jit_cleanup(domain);
+}
 
 void SharpSource::SDK_OnAllLoaded() { }
 
@@ -92,15 +112,3 @@ bool SharpSource::SDK_OnMetamodUnload(char *error, size_t maxlength) { return tr
 bool SharpSource::SDK_OnMetamodPauseChange(bool paused, char *error, size_t maxlength) { return true; }
 
 #endif
-
-
-MonoMethod* SharpSource::MonoSearchMethod(MonoClass *klass, const char *methodname)
-{
-  MonoMethod *m = NULL;
-  gpointer iter = NULL;
-  while ((m = mono_class_get_methods(klass, &iter)))
-  {
-    if (strcmp(mono_method_get_name(m), methodname) == 0) return m;
-  }
-  return NULL;
-}

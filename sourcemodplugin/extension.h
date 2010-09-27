@@ -122,8 +122,6 @@ public:
 	 */
 	virtual bool SDK_OnMetamodPauseChange(bool paused, char *error, size_t maxlength);
 #endif
-  public:
-  MonoMethod* MonoSearchMethod(MonoClass *klass, const char *methodname);
 };
 
 #endif // _INCLUDE_SOURCEMOD_EXTENSION_PROPER_H_
