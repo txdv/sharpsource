@@ -85,7 +85,7 @@ bool SharpSource::SDK_OnLoad(char *error, size_t maxlength, bool late)
   }
 
   void *args[1];
-  args[0] = g_pSM;
+  args[0] = &g_pSM;
   mono_runtime_invoke(init, NULL, args, NULL);
 
   return true;
