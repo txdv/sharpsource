@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpSource", "SharpSource\SharpSource.csproj", "{F698E594-7EEA-4E36-A821-54F94F49F22E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "extensions", "extensions", "{E6E5E247-EBBE-4E87-B884-6BCCBFEE0C4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSuite", "extensions\TestSuite\TestSuite.csproj", "{0206FD18-076A-4B36-B512-4AA2EFA206A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0206FD18-076A-4B36-B512-4AA2EFA206A6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0206FD18-076A-4B36-B512-4AA2EFA206A6}.Debug|x86.Build.0 = Debug|Any CPU
+		{0206FD18-076A-4B36-B512-4AA2EFA206A6}.Release|x86.ActiveCfg = Release|Any CPU
+		{0206FD18-076A-4B36-B512-4AA2EFA206A6}.Release|x86.Build.0 = Release|Any CPU
+		{F698E594-7EEA-4E36-A821-54F94F49F22E}.Debug|x86.ActiveCfg = Debug|x86
+		{F698E594-7EEA-4E36-A821-54F94F49F22E}.Debug|x86.Build.0 = Debug|x86
+		{F698E594-7EEA-4E36-A821-54F94F49F22E}.Release|x86.ActiveCfg = Release|x86
+		{F698E594-7EEA-4E36-A821-54F94F49F22E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0206FD18-076A-4B36-B512-4AA2EFA206A6} = {E6E5E247-EBBE-4E87-B884-6BCCBFEE0C4F}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = SharpSource\SharpSource.csproj
+	EndGlobalSection
+EndGlobal

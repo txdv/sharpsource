@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F698E594-7EEA-4E36-A821-54F94F49F22E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SharpSource</RootNamespace>
+    <AssemblyName>SharpSource</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Cxxi, Version=1.0.4441.31349, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\mono\cxxi\bin\Debug\Mono.Cxxi.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlliedMods\Core.cs" />
+    <Compile Include="AlliedMods\partial\IExtension.cs" />
+    <Compile Include="AlliedMods\partial\IPluginFunction.cs" />
+    <Compile Include="AlliedMods\partial\IShareSys.cs" />
+    <Compile Include="AlliedMods\partial\ISourceMod.cs" />
+    <Compile Include="AlliedMods\partial\IPluginContext.cs" />
+    <Compile Include="AlliedMods\generated\CallStackInfo.cs" />
+    <Compile Include="AlliedMods\generated\Dl_info.cs" />
+    <Compile Include="AlliedMods\generated\Dl_serinfo.cs" />
+    <Compile Include="AlliedMods\generated\Dl_serpath.cs" />
+    <Compile Include="AlliedMods\generated\FeatureStatus.cs" />
+    <Compile Include="AlliedMods\generated\FeatureType.cs" />
+    <Compile Include="AlliedMods\generated\FileTimeType.cs" />
+    <Compile Include="AlliedMods\generated\HTypeAccessRight.cs" />
+    <Compile Include="AlliedMods\generated\HandleAccess.cs" />
+    <Compile Include="AlliedMods\generated\HandleAccessRight.cs" />
+    <Compile Include="AlliedMods\generated\HandleError.cs" />
+    <Compile Include="AlliedMods\generated\HandleSecurity.cs" />
+    <Compile Include="AlliedMods\generated\ICallable.cs" />
+    <Compile Include="AlliedMods\generated\ICompilation.cs" />
+    <Compile Include="AlliedMods\generated\IContextTrace.cs" />
+    <Compile Include="AlliedMods\generated\IDataPack.cs" />
+    <Compile Include="AlliedMods\generated\IDataReader.cs" />
+    <Compile Include="AlliedMods\generated\IDebugListener.cs" />
+    <Compile Include="AlliedMods\generated\IDirectory.cs" />
+    <Compile Include="AlliedMods\generated\IExtension.cs" />
+    <Compile Include="AlliedMods\generated\IExtensionInterface.cs" />
+    <Compile Include="AlliedMods\generated\IExtensionManager.cs" />
+    <Compile Include="AlliedMods\generated\IFeatureProvider.cs" />
+    <Compile Include="AlliedMods\generated\IHandleSys.cs" />
+    <Compile Include="AlliedMods\generated\IHandleTypeDispatch.cs" />
+    <Compile Include="AlliedMods\generated\ILibrary.cs" />
+    <Compile Include="AlliedMods\generated\ILibrarySys.cs" />
+    <Compile Include="AlliedMods\generated\IPluginContext.cs" />
+    <Compile Include="AlliedMods\generated\IPluginDebugInfo.cs" />
+    <Compile Include="AlliedMods\generated\IPluginFunction.cs" />
+    <Compile Include="AlliedMods\generated\IPluginRuntime.cs" />
+    <Compile Include="AlliedMods\generated\IProfiler.cs" />
+    <Compile Include="AlliedMods\generated\IShareSys.cs" />
+    <Compile Include="AlliedMods\generated\ISourceMod.cs" />
+    <Compile Include="AlliedMods\generated\ISourcePawnEngine.cs" />
+    <Compile Include="AlliedMods\generated\ISourcePawnEngine2.cs" />
+    <Compile Include="AlliedMods\generated\Libs.cs" />
+    <Compile Include="AlliedMods\generated\PathType.cs" />
+    <Compile Include="AlliedMods\generated\SMInterface.cs" />
+    <Compile Include="AlliedMods\generated\SP_NULL_TYPE.cs" />
+    <Compile Include="AlliedMods\generated\TypeAccess.cs" />
+    <Compile Include="AlliedMods\generated\_G_fpos64_t.cs" />
+    <Compile Include="AlliedMods\generated\_G_fpos_t.cs" />
+    <Compile Include="AlliedMods\generated\_IO_FILE.cs" />
+    <Compile Include="AlliedMods\generated\_IO_cookie_io_functions_t.cs" />
+    <Compile Include="AlliedMods\generated\_IO_marker.cs" />
+    <Compile Include="AlliedMods\generated\__class_type_info_pseudo.cs" />
+    <Compile Include="AlliedMods\generated\__codecvt_result.cs" />
+    <Compile Include="AlliedMods\generated\__fsid_t.cs" />
+    <Compile Include="AlliedMods\generated\__locale_struct.cs" />
+    <Compile Include="AlliedMods\generated\__mbstate_t.cs" />
+    <Compile Include="AlliedMods\generated\__si_class_type_info_pseudo.cs" />
+    <Compile Include="AlliedMods\generated\dirent.cs" />
+    <Compile Include="AlliedMods\generated\dirent64.cs" />
+    <Compile Include="AlliedMods\generated\fp_fdbg_ntvarg_s.cs" />
+    <Compile Include="AlliedMods\generated\itimerspec.cs" />
+    <Compile Include="AlliedMods\generated\sp_debug_file_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_debug_line_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_debug_symbol_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_fdbg_arraydim_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_fdbg_file_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_fdbg_info_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_fdbg_line_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_fdbg_native_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_fdbg_ntvtab_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_fdbg_symbol_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_file_code_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_file_data_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_file_hdr_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_file_natives_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_file_publics_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_file_pubvars_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_file_section_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_file_tag_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_native_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_nativeinfo_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_public_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_pubvar_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_u_fdbg_arraydim_s.cs" />
+    <Compile Include="AlliedMods\generated\sp_u_fdbg_symbol_s.cs" />
+    <Compile Include="AlliedMods\generated\stat.cs" />
+    <Compile Include="AlliedMods\generated\stat64.cs" />
+    <Compile Include="AlliedMods\generated\timespec.cs" />
+    <Compile Include="AlliedMods\generated\tm.cs" />
+    <Compile Include="SharpSource\Core.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AlliedMods\" />
+    <Folder Include="..\" />
+    <Folder Include="SharpSource\" />
+  </ItemGroup>
+</Project>
