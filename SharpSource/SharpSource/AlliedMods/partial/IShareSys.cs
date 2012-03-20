@@ -119,6 +119,9 @@ namespace AlliedMods.SourceMod {
 					} else if (type == typeof(SPBuffer)) {
 						methodParams[i] = new SPBuffer(pluginContext, arguments[argumenti]);
 						argumenti++;
+					} else if (type == typeof(SPSizedBuffer)) {
+						methodParams[i] = new SPSizedBuffer(pluginContext, arguments[argumenti], (uint)arguments[argumenti + 1]);
+						argumenti += 2;
 					} else if (type == typeof(IPluginFunction)) {
 						var attributes = param.GetCustomAttributes(typeof(SPMethodAttribute), false);
 						if (attributes.Length > 0) {

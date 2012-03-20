@@ -28,6 +28,7 @@ namespace TestSuite
 		[SPMethod]
 		public static void test_addnative0()
 		{
+			tests++;
 		}
 
 		[SPMethod("test_addnative3")]
@@ -77,13 +78,28 @@ namespace TestSuite
 		}
 
 		[SPMethod]
-		public static void test_callback(Action<SPBuffer> callback, SPBuffer buffer, uint maxlength)
+		public static void test_callback1(Action<SPBuffer> callback, SPBuffer buffer, uint maxlength)
 		{
 			if (buffer.Get() != "HELLO WORLD") {
 				Console.WriteLine("FAILED");
+				return;
 			}
 
+			tests++;
 			buffer.Set(buffer.Get().ToLower(), maxlength);
+			callback(buffer);
+		}
+
+		[SPMethod]
+		public static void test_callback2(Action<SPBuffer> callback, SPSizedBuffer buffer)
+		{
+			if (buffer.Get() != "hello world") {
+				Console.WriteLine("FAILED");
+				return;
+			}
+
+			tests++;
+			buffer.Set("testing 1 3");
 			callback(buffer);
 		}
 	}

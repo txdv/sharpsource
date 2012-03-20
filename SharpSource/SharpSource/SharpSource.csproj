@@ -136,6 +136,15 @@
     <Compile Include="AlliedMods\generated\timespec.cs" />
     <Compile Include="AlliedMods\generated\tm.cs" />
     <Compile Include="SharpSource\Core.cs" />
+    <Compile Include="AlliedMods\generated\IPlayerManager.cs" />
+    <Compile Include="AlliedMods\generated\IClientListener.cs" />
+    <Compile Include="AlliedMods\generated\IGamePlayer.cs" />
+    <Compile Include="AlliedMods\generated\ICommandTargetProcessor.cs" />
+    <Compile Include="AlliedMods\generated\cmd_target_info_t.cs" />
+    <Compile Include="AlliedMods\generated\ITimedEvent.cs" />
+    <Compile Include="AlliedMods\generated\ITimerSystem.cs" />
+    <Compile Include="AlliedMods\generated\ResultType.cs" />
+    <Compile Include="AlliedMods\generated\IMapTimer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AlliedMods\" />

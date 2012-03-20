@@ -19,14 +19,18 @@ native test_addnative6();
 native test_addnative7(i);
 native test_end(i);
 
-native test_callback(Function:func, String:buffer[], maxlength);
+native test_callback1(Function:func, String:buffer[], maxlength);
+native test_callback2(Function:func, String:buffer[], maxlength);
 
-// new Function:callback = GetFunctionByName(GetMyHandle(), "callback_func");
-public callback_func(String:str[])
+public callback_func1(String:str[])
 {
   assert(strcmp(str, "hello world") == 0);
 }
 
+public callback_func2(string:str[])
+{
+  assert(strcmp(str, "testing 1 3") == 0);
+}
 
 public OnPluginStart()
 {
@@ -39,7 +43,10 @@ public OnPluginStart()
   assert(test_addnative6() == 42);
   new i = 1234;
   assert(test_addnative7(i) == i);
-  test_end(7);
+
   new String:buffer[] = "HELLO WORLD";
-  test_callback(callback_func, buffer, sizeof(buffer));
+  test_callback1(callback_func1, buffer, sizeof(buffer));
+  test_callback2(callback_func2, buffer, sizeof(buffer));
+
+  test_end(10);
 }

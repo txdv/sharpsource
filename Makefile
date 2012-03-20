@@ -28,7 +28,6 @@ PROJECT = sharpsource
 #USEMETA = true
 
 OBJECTS = sdk/smsdk_ext.cpp extension.cpp
-SourceMod = libs/SourceMod.dll
 
 ##############################################
 ### CONFIGURE ANY OTHER FLAGS/OPTIONS HERE ###
@@ -165,7 +164,7 @@ OBJ_BIN := $(OBJECTS:%.cpp=$(BIN_DIR)/%.o)
 $(BIN_DIR)/%.o: %.cpp
 	$(CPP) $(INCLUDE) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 
-all: check $(SourceMod)
+all: check
 	mkdir -p $(BIN_DIR)/sdk
 	if [ "$(USEMETA)" = "true" ]; then \
 		ln -sf $(HL2LIB)/$(LIB_PREFIX)vstdlib$(LIB_SUFFIX); \
@@ -196,11 +195,8 @@ clean: check
 bindings.xml:
 	gccxml -fxml=$@ $(INCLUDE) sdk/smsdk_ext.h
 
-#generated: bindings.xml
-#	$(CXXI) --out=generated -lib=AlliedMods bindings.xml
-
-#$(SourceMod): generated $(wildcard partial/*cs)
-#	gmcs $(wildcard generated/*cs) $(wildcard partial/*cs) -r:$(CXXILIB) -target:library -unsafe -out:$@
+generated: bindings.xml
+	$(CXXI) --out=generated -lib=AlliedMods bindings.xml
 
 .PHONY: copy
 

@@ -43,9 +43,25 @@ namespace AlliedMods.SourcePawn {
 			} else {
 				return null;
 			}
-
 		}
 	}
+
+	public class SPSizedBuffer : SPBuffer
+	{
+		public uint Size { get; protected set; }
+
+		internal SPSizedBuffer(IPluginContext pluginContext, int local, uint maxLength)
+			: base(pluginContext, local)
+		{
+			Size = maxLength;
+		}
+
+		public uint Set(string str)
+		{
+			return Set(str, Size);
+		}
+	}
+
 	public partial class IPluginFunction : ICallable {
 
 		private int[] ObjectParams(object[] @params)

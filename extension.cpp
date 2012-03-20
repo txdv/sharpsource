@@ -76,17 +76,19 @@ bool SharpSource::SDK_OnLoad(char *error, size_t maxlength, bool late)
     return false;
   }
 
-  MonoMethod *init = mono_class_get_method_from_name(metamod_class, "Init", 3);
+  MonoMethod *init = mono_class_get_method_from_name(metamod_class, "Init", 5);
 
   if (!init) {
     strcpy(error, "Can't find the method Init in MainClass");
     return false;
   }
 
-  void *args[3];
+  void *args[5];
   args[0] = &smutils;
   args[1] = &sharesys;
   args[2] = &myself;
+  args[3] = &playerhelpers;
+  args[4] = &timersys;
   mono_runtime_invoke(init, NULL, args, NULL);
 
   return true;

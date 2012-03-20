@@ -23,8 +23,11 @@ namespace AlliedMods
 		public static ISourceMod SourceMod { get; private set; }
 		public static IShareSys ShareSys { get; private set; }
 		public static IExtension Extension { get; private set; }
+		public static IPlayerManager PlayerManager { get; private set; }
+		public static ITimerSystem TimerSystem { get; private set; }
 
-		public static void Init(IntPtr smutilsptr, IntPtr sharesysptr, IntPtr myself)
+		public static void Init(IntPtr smutilsptr, IntPtr sharesysptr, IntPtr myself, IntPtr playermanager,
+			IntPtr timersystem)
 		{
 			Console.WriteLine (Directory.GetCurrentDirectory());
 			HomePath = Path.Combine(Directory.GetCurrentDirectory(), "cstrike/addons/sharpsource");
@@ -32,6 +35,8 @@ namespace AlliedMods
 			SourceMod = new ISourceMod(new CppInstancePtr(smutilsptr));
 			ShareSys = new IShareSys(new CppInstancePtr(sharesysptr));
 			Extension = new IExtension(new CppInstancePtr(myself));
+			PlayerManager = new IPlayerManager(new CppInstancePtr(playermanager));
+			TimerSystem = new ITimerSystem(new CppInstancePtr(timersystem));
 			Init();
 		}
 
